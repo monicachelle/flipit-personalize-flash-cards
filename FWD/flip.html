@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flip - FlipIt Studio</title>
+  <link rel="stylesheet" href="flip.css">
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Baloo+2:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<section class="flip-container">
+  
+  <div class="flip-header">
+    <h1 class="flip-title">🦋 Flip & Revise</h1>
+    <p class="flip-subtitle">Review your flashcards - flip, learn, and master!</p>
+  </div>
+
+  <!-- Source Selection -->
+  <div class="source-selection">
+    <button class="source-btn active" id="sourceCollection">
+      <span>📚</span> My Collection
+    </button>
+    <button class="source-btn" id="sourceExported">
+      <span>📁</span> Exported Files
+    </button>
+  </div>
+
+  <!-- Collection View (Default) -->
+  <div id="collectionView">
+    <div class="cards-selector">
+      <h3>Select Cards to Review</h3>
+      <div class="select-all-cards">
+        <input type="checkbox" id="selectAllCards">
+        <label for="selectAllCards">Select All Cards</label>
+      </div>
+      <div class="cards-grid-selector" id="cardsGridSelector">
+        <div class="empty-state">
+          <p>🌸 No cards in your collection. Go to Design and create some!</p>
+        </div>
+      </div>
+      <button class="start-review-btn" id="startReviewBtn" disabled>
+        <span>▶️</span> Start Review
+      </button>
+    </div>
+  </div>
+
+  <!-- Exported Files View (Hidden by default) -->
+  <div id="exportedView" style="display: none;">
+    <div class="file-selector">
+      <h3>Select an Exported File</h3>
+      <div class="files-grid" id="filesGrid">
+        <div class="empty-state">
+          <p>📁 No exported files yet. Go to Export and create some!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Review Section (Hidden by default) -->
+  <div id="reviewSection" style="display: none;">
+    <div class="review-section">
+      <div class="review-header">
+        <h2 class="review-title" id="reviewTitle">Reviewing: <span id="reviewSourceName"></span></h2>
+        <div class="review-stats" id="reviewStats">0/0 cards</div>
+      </div>
+
+      <!-- Flashcard -->
+      <div class="flashcard-wrapper" id="flashcardWrapper">
+        <div class="flashcard" id="flashcard">
+          <div class="flashcard-front">
+            <div class="card-content" id="cardFrontContent"></div>
+          </div>
+          <div class="flashcard-back">
+            <div class="card-content" id="cardBackContent"></div>
+          </div>
+        </div>
+      </div>
+      <p class="flip-hint">✨ Click the card to flip ✨</p>
+
+      <!-- Navigation -->
+      <div class="review-navigation">
+        <button class="nav-btn" id="prevCardBtn" disabled>◀ Previous</button>
+        <span id="cardCounter">1 / 0</span>
+        <button class="nav-btn" id="nextCardBtn" disabled>Next ▶</button>
+      </div>
+
+      <!-- Exit Button -->
+      <button class="exit-review-btn" id="exitReviewBtn">
+        <span>🔙</span> Back to Selection
+      </button>
+    </div>
+  </div>
+
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="flip.js"></script>
+</body>
+</html>

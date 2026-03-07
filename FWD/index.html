@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FlipIt – Personalize Your Flashcards</title>
+  <link rel="stylesheet" href="style4.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <h2 class="logo">FlipIt ✨</h2>
+  <button onclick="window.location.href='login.html'">
+    Login
+  </button>
+</nav>
+
+<!-- FEATURES HEADING -->
+<section class="features-intro">
+  <h2>Unlock Your Learning Potential</h2>
+  <p>FlipIt makes learning fun, interactive, and effective. Explore the tools below to personalize your study experience!</p>
+</section>
+
+<!-- HERO / WELCOME -->
+<section class="hero">
+  <div class="hero-box">
+
+    <!-- POKEMON WELCOME -->
+    <div class="pokemon-box">
+      <img id="pokemonImage" src="" alt="Pokemon Character">
+      <h3 id="pokemonName"></h3>
+      <p id="pokemonNote">“Let’s learn and grow together!” ✨</p>
+      <button class="refresh-btn" onclick="loadPokemon()">🔄 Refresh Pokémon</button>
+    </div>
+
+    <!-- HEADER -->
+    <h1 class="main-heading">FlipIt ✨ Personalize Your Flashcards 📝💖</h1>
+
+    <!-- MOTIVATIONAL LINE WITH BULLETS -->
+    <p class="motivation">
+      <span class="bullet">•</span> <span class="motivation-word">Learn</span> &nbsp;&nbsp;
+      <span class="bullet">•</span> <span class="motivation-word">Flip</span> &nbsp;&nbsp;
+      <span class="bullet">•</span> <span class="motivation-word">Remember</span> &nbsp;&nbsp;
+      <span class="bullet">•</span> <span class="motivation-word">Grow</span>
+    </p>
+
+    <!-- HEARTFELT WELCOME TEXT -->
+    <p class="hero-text">
+      Welcome to FlipIt! 🎉 Your journey to smarter, fun, and personalized learning starts here.  
+      Let’s make studying exciting, creative, and inspiring. 🌟📚💖
+    </p>
+
+  </div>
+</section>
+
+<!-- FEATURES HEADING BANNER -->
+<section class="features-banner">
+  <h2>Discover What FlipIt Can Do!</h2>
+</section>
+
+<!-- FEATURES BOXES (Order: Create, Save, Export, Flip) -->
+<section class="features">
+  <div class="card">
+    <h3>🎨 Create Flashcards</h3>
+    <p>Design questions and answers your way.<br>Add colors, images, and formatting.<br>Make your flashcards fun.<br>Perfect for creative learners.<br>Study the way you like.</p>
+  </div>
+  <div class="card">
+    <h3>📌 Save & Continue</h3>
+    <p>Progress is saved securely.<br>Continue anytime.<br>Pick up where you left.<br>Track achievements.<br>Learning that fits your routine.</p>
+  </div>
+  <div class="card">
+    <h3>📄 Export & Print</h3>
+    <p>Download cards as PDF.<br>Print for offline study.<br>Take anywhere.<br>Perfect for last-minute prep.<br>Learn both digitally & physically.</p>
+  </div>
+  <div class="card">
+    <h3>🔄 Flip to Learn</h3>
+    <p>Flip cards to reveal answers.<br>Boost active recall.<br>Practice interactively.<br>Engage your memory.<br>Learn faster naturally.</p>
+  </div>
+</section>
+
+<section class="features-banner">
+  <h2>FACTS!..LETS BEGIN EXPLORING</h2>
+</section>
+
+<!-- DETAILS ME BOX -->
+<section class="details-me">
+  <div class="details-box">
+    <h2>DETAILS ME ✨🦋</h2>
+    <p>Hello! I'm Monica Raghini Chelle💖. 🌟FlipIt is my project to make learning fun and interactive! . I hope this creation helps you.Thank you !!📝🎉</p>
+  </div>
+</section>
+
+<!-- JS SCRIPT -->
+<script>
+  async function loadPokemon() {
+    const randomId = Math.floor(Math.random() * 151) + 1;
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
+    const data = await response.json();
+
+    document.getElementById("pokemonImage").src =
+      data.sprites.other["official-artwork"].front_default;
+
+    document.getElementById("pokemonName").innerText =
+      `👋 ${data.name.charAt(0).toUpperCase() + data.name.slice(1)} welcomes you!`;
+  }
+
+  loadPokemon();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Save - FlipIt Studio</title>
+  <link rel="stylesheet" href="save.css">
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Baloo+2:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<section class="save-container">
+  
+  <div class="save-header">
+    <h1 class="save-title">📚 My Flashcard Collection</h1>
+    <p class="save-subtitle">View, edit, and manage your saved flashcards</p>
+  </div>
+
+  <div class="collection-stats">
+    <span id="totalCards">0 cards</span>
+    <button class="refresh-btn" id="refreshCollection">🔄 Refresh</button>
+  </div>
+
+  <div class="cards-grid" id="cardsGrid">
+    <div class="empty-collection">
+      <p>🌸 No cards saved yet. Go to Design and save your first card!</p>
+    </div>
+  </div>
+
+  <!-- Edit Modal -->
+  <div class="modal" id="editModal" style="display: none;">
+    <div class="modal-content">
+      <h3>Edit Card</h3>
+      <input type="text" id="editCardName" placeholder="Card name">
+      <textarea id="editCardContent" rows="4" placeholder="Card content"></textarea>
+      
+      <h4>Styles</h4>
+      <div class="modal-styles">
+        <div class="style-row">
+          <label>Font Size:</label>
+          <select id="editFontSize">
+            <option value="14px">Small</option>
+            <option value="18px">Normal</option>
+            <option value="22px">Large</option>
+            <option value="26px">X-Large</option>
+            <option value="32px">Heading</option>
+          </select>
+        </div>
+        <div class="style-row">
+          <label>Text Color:</label>
+          <input type="color" id="editTextColor">
+        </div>
+        <div class="style-row">
+          <label>Background:</label>
+          <input type="color" id="editBgColor">
+        </div>
+        <div class="style-row">
+          <label>Alignment:</label>
+          <select id="editTextAlign">
+            <option value="left">Left</option>
+            <option value="center">Center</option>
+            <option value="right">Right</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="modal-actions">
+        <button class="modal-btn cancel-btn" id="cancelEdit">Cancel</button>
+        <button class="modal-btn save-btn" id="saveEdit">Save Changes</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete Confirmation Modal -->
+  <div class="modal" id="deleteModal" style="display: none;">
+    <div class="modal-content">
+      <h3>Delete Card</h3>
+      <p>Are you sure you want to delete this card?</p>
+      <div class="modal-actions">
+        <button class="modal-btn cancel-btn" id="cancelDelete">Cancel</button>
+        <button class="modal-btn delete-btn" id="confirmDelete">Delete</button>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<script src="save.js"></script>
+</body>
+</html>

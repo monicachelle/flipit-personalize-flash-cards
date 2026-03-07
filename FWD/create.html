@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Flashcards - FlipIt Studio</title>
+  <link rel="stylesheet" href="create.css">
+</head>
+<body>
+<section class="create-container">
+  
+  <!-- Header -->
+  <div class="create-header">
+    <h1 class="create-title">🎨 Create Flashcards</h1>
+    <p class="create-subtitle">Design your own flashcards - add text, colors, and style! ✨</p>
+  </div>
+
+  <!-- Main Content Area -->
+  <div class="create-main">
+    
+    <!-- Left Side - Flashcard Canvas -->
+    <div class="canvas-area">
+      <h2 class="section-title">📄 Flashcard Canvas</h2>
+      
+      <!-- Card Navigation -->
+      <div class="card-navigation">
+        <button class="nav-btn" id="prevCardBtn" disabled>◀ Previous</button>
+        <span id="cardIndicator">Card 1 / 1</span>
+        <button class="nav-btn" id="nextCardBtn" disabled>Next ▶</button>
+      </div>
+      
+      <!-- The Flashcard -->
+      <div class="flashcard-wrapper">
+        <div class="flashcard" id="currentFlashcard">
+          <div class="flashcard-front" id="cardFront">
+            <div class="card-content" id="cardContent" contenteditable="true">Start typing here...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Right Side - Editing Tools -->
+    <div class="tools-area">
+      <h2 class="section-title">🛠️ Editing Tools</h2>
+      
+      <!-- Text Formatting Tools -->
+      <div class="formatting-tools">
+        <h3>Text Style</h3>
+        <div class="tool-group">
+          <label>Font Size:</label>
+          <select id="fontSize">
+            <option value="14px">Small</option>
+            <option value="18px" selected>Normal</option>
+            <option value="22px">Large</option>
+            <option value="26px">X-Large</option>
+            <option value="32px">Heading</option>
+          </select>
+        </div>
+        <div class="tool-group">
+          <label>Text Color:</label>
+          <input type="color" id="textColor" value="#333333">
+        </div>
+        <div class="tool-group">
+          <label>Background Color:</label>
+          <input type="color" id="bgColor" value="#fff9f0">
+        </div>
+        <div class="tool-row">
+          <button class="style-btn" id="alignLeftBtn">⬅ Left</button>
+          <button class="style-btn" id="alignCenterBtn">⬌ Center</button>
+          <button class="style-btn" id="alignRightBtn">➡ Right</button>
+        </div>
+      </div>
+      
+      <!-- Border and Effects -->
+      <div class="effects-tools">
+        <h3>Card Style</h3>
+        <div class="tool-group">
+          <label>Border Style:</label>
+          <select id="borderStyle">
+            <option value="solid">Solid</option>
+            <option value="dashed">Dashed</option>
+            <option value="dotted">Dotted</option>
+            <option value="double">Double</option>
+            <option value="none">None</option>
+          </select>
+        </div>
+        <div class="tool-group">
+          <label>Border Color:</label>
+          <input type="color" id="borderColor" value="#d77a7a">
+        </div>
+        <div class="tool-group">
+          <label>Border Width:</label>
+          <select id="borderWidth">
+            <option value="1px">Thin</option>
+            <option value="3px" selected>Medium</option>
+            <option value="5px">Thick</option>
+          </select>
+        </div>
+        <div class="tool-group">
+          <label>Corner Roundness:</label>
+          <select id="borderRadius">
+            <option value="10px">Slight</option>
+            <option value="20px" selected>Rounded</option>
+            <option value="30px">Very Rounded</option>
+            <option value="50px">Pill Shape</option>
+          </select>
+        </div>
+      </div>
+      
+                  <!-- Image Tools (File Upload) -->
+      <div class="effects-tools">
+        <h3>🖼️ Add Images</h3>
+        <div class="tool-group">
+          <label>Upload Image:</label>
+          <input type="file" id="imageUpload" accept="image/*">
+        </div>
+        <div class="tool-row">
+          <button class="style-btn" id="uploadImageBtn">➕ Upload Image</button>
+          <button class="style-btn" id="removeImageBtn">❌ Remove Image</button>
+        </div>
+        <div class="tool-group">
+          <label>Image Size:</label>
+          <select id="imageSize">
+            <option value="50px">Small</option>
+            <option value="100px" selected>Medium</option>
+            <option value="150px">Large</option>
+            <option value="200px">X-Large</option>
+          </select>
+        </div>
+        <div id="imagePreview" style="margin-top: 10px; display: none;">
+          <img id="previewImg" style="max-width: 100px; max-height: 100px; border-radius: 10px;">
+        </div>
+      </div>
+      <!-- Apply Changes Button -->
+      <button class="apply-btn" id="applyStylesBtn">✅ Apply Styles</button>
+      <!-- Save to Collection Button -->
+      
+<button class="save-collection-btn" id="saveToCollectionBtn">💾 Save to Collection</button>
+    </div>
+  </div>
+</section>
+
+<script src="create.js"></script>
+</body>
+</html>
