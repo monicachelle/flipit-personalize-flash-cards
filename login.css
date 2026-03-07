@@ -112,7 +112,8 @@ button:hover {
 /* ----------- DEFAULT CREDENTIALS INFO ----------- */
 .default-creds {
   font-size: 10px;
-  color: #888;
+  font-weight : bold;
+  color: #c6c5c5;
   margin: 5px 0 15px 0;
 }
 
