@@ -109,6 +109,13 @@ button:hover {
   font-size: 13px;
 }
 
+/* ----------- DEFAULT CREDENTIALS INFO ----------- */
+.default-creds {
+  font-size: 10px;
+  color: #888;
+  margin: 5px 0 15px 0;
+}
+
 /* ----------- ANIMATION ----------- */
 @keyframes fadeIn {
   from {
