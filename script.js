@@ -5,6 +5,7 @@ const validUsers = [
   { username: "student", password: "learn123" },
   { username: "demo", password: "demo123" },
   { username: "Monica Raghini", password: "moni@26" }
+   { username: "1234", password: "1234" }
   
 ];
 
