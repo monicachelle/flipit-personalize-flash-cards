@@ -132,8 +132,15 @@ function loadCollection() {
       lastModified: new Date().toISOString()
     };
     
-    // Save to localStorage
-    localStorage.setItem('flashcardCollection', JSON.stringify(collection));
+    // Save to localStorage under current user's key
+    const currentUser = localStorage.getItem('currentUser');
+    if (currentUser) {
+      const userCollectionKey = `${currentUser}_flashcardCollection`;
+      localStorage.setItem(userCollectionKey, JSON.stringify(collection));
+    } else {
+      // fallback (shouldn't happen)
+      localStorage.setItem('flashcardCollection', JSON.stringify(collection));
+    }
     
     // Close modal and refresh
     editModal.style.display = 'none';
@@ -146,7 +153,13 @@ function loadCollection() {
     if (!cardToDelete) return;
     
     collection = collection.filter(c => c.id !== cardToDelete);
-    localStorage.setItem('flashcardCollection', JSON.stringify(collection));
+    const currentUser = localStorage.getItem('currentUser');
+    if (currentUser) {
+      const userCollectionKey = `${currentUser}_flashcardCollection`;
+      localStorage.setItem(userCollectionKey, JSON.stringify(collection));
+    } else {
+      localStorage.setItem('flashcardCollection', JSON.stringify(collection));
+    }
     
     deleteModal.style.display = 'none';
     cardToDelete = null;
