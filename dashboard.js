@@ -51,5 +51,6 @@ function logout() {
 
 // Go to main page without logging out
 function goToMainPage() {
-    window.location.href = 'index4.html';
+    console.log('Redirecting to main index page');
+    window.location.href = 'index.html';
 }
